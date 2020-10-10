@@ -32,9 +32,9 @@ void GetDir(){
 
 int main(){
     while(1){
-        GetLoginName();
-        GetHostName();
-        GetDir();
+        /* GetLoginName(); */
+        /* GetHostName(); */
+        /* GetDir(); */
         fflush(stdout);
         //读取字符串
         char buf[1024];
