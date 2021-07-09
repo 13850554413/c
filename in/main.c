@@ -7,9 +7,10 @@
 #include <string.h>
 #include <time.h>
 
-#include "input_keys.c"
 
-int input_key(void);
+#define INPUT_KEYBOARD "/dev/input/event3"
+
+#include "input_keys.c"
 
 int main(int argc, char *argv[])
 {
@@ -28,19 +29,18 @@ int main(int argc, char *argv[])
         close(STDOUT_FILENO);
         close(STDERR_FILENO);
         // 6. 执行核心操作
-        /*
         int fd = open("./temp-deamon-log.txt", O_CREAT | O_WRONLY | O_APPEND, 0664);
+        struct input_event ev = input_key(); // 读取键盘输入事件函数，未完成
         int i;
-        for (i = 0; i < 100; i++) {
+        for (i = 0; i < 50; i++) {
             sleep(3);
             time_t curtime;
             time(&curtime);
             char* pt = ctime(&curtime);
             write(fd, pt, strlen(pt) + 1);
+            printf("%u\n", ev.code);
         }
         close(fd);
-        */
-        input_key() // 读取键盘输入事件函数，未完成
     }
 
     return EXIT_SUCCESS;

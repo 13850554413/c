@@ -37,7 +37,6 @@ int main(int argc, char *argv[])
         close(STDOUT_FILENO);
         close(STDERR_FILENO);
         // 6. 执行核心操作
-        /*
         int fd = open("/home/yihui/temp-deamon-log.txt", O_CREAT | O_WRONLY | O_APPEND, 0664);
         int i;
         for (i = 0; i < 100; i++) {
@@ -48,7 +47,6 @@ int main(int argc, char *argv[])
             write(fd, pt, strlen(pt) + 1);
         }
         close(fd);
-        */
     }
 
     return EXIT_SUCCESS;
